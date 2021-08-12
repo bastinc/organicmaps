@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.18)
 
 project(omim C CXX)
 
@@ -268,6 +268,9 @@ if (USE_PCH)
     ${OMIM_PCH_TARGET_NAME}
   )
 endif()
+
+set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
+set(EXPAT_SHARED_LIBS OFF)
 
 # Include subdirectories
 add_subdirectory(3party/agg)
